@@ -51,7 +51,6 @@ public class DetectionTest {
     assertFalse(d.isFeaturePhone());
     assertFalse(d.isTablet());
     assertFalse(d.isPhablet());
-    assertFalse(d.isCarBrowser());
     assertFalse(d.isSmartDisplay());
     assertFalse(d.isSmartSpeaker());
     assertFalse(d.isTV());

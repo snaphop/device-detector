@@ -321,11 +321,6 @@ public class Detection {
   }
 
   @JsonIgnore
-  public boolean isCarBrowser() {
-    return this.device != null ? this.device.getType().equals("car browser") : false;
-  }
-
-  @JsonIgnore
   public boolean isCamera() {
     return this.device != null ? this.device.getType().equals("camera") : false;
   }
