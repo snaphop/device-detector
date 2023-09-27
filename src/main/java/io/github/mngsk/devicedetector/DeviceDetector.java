@@ -24,7 +24,6 @@ import io.github.mngsk.devicedetector.device.Device;
 import io.github.mngsk.devicedetector.device.HbbTvDeviceParser;
 import io.github.mngsk.devicedetector.device.MobileDeviceParser;
 import io.github.mngsk.devicedetector.device.NotebookDeviceParser;
-import io.github.mngsk.devicedetector.device.PortableMediaPlayerDeviceParser;
 import io.github.mngsk.devicedetector.device.ShellTvDeviceParser;
 import io.github.mngsk.devicedetector.operatingsystem.OperatingSystem;
 import io.github.mngsk.devicedetector.operatingsystem.OperatingSystemParser;
@@ -82,7 +81,6 @@ public class DeviceDetector {
     private boolean enableCameras = true;
     private boolean enableConsoles = true;
     private boolean enableMobiles = true;
-    private boolean enablePortableMediaPlayers = true;
     private boolean enableTelevisions = true;
     private boolean enableNotebooks = true;
 
@@ -108,7 +106,6 @@ public class DeviceDetector {
       this.enableCameras = true;
       this.enableConsoles = true;
       this.enableMobiles = true;
-      this.enablePortableMediaPlayers = true;
       this.enableTelevisions = true;
       this.enableNotebooks = true;
       return this;
@@ -126,11 +123,6 @@ public class DeviceDetector {
 
     public DeviceDetectorBuilder enableMobiles() {
       this.enableMobiles = true;
-      return this;
-    }
-
-    public DeviceDetectorBuilder enablePortableMediaPlayers() {
-      this.enablePortableMediaPlayers = true;
       return this;
     }
 
@@ -206,7 +198,6 @@ public class DeviceDetector {
       this.enableCameras = false;
       this.enableConsoles = false;
       this.enableMobiles = false;
-      this.enablePortableMediaPlayers = false;
       this.enableTelevisions = false;
       this.enableNotebooks = false;
       return this;
@@ -224,11 +215,6 @@ public class DeviceDetector {
 
     public DeviceDetectorBuilder disableMobiles() {
       this.enableMobiles = false;
-      return this;
-    }
-
-    public DeviceDetectorBuilder disablePortableMediaPlayers() {
-      this.enablePortableMediaPlayers = false;
       return this;
     }
 
@@ -311,9 +297,6 @@ public class DeviceDetector {
       }
       if (this.enableCameras) {
         deviceParsers.add(new CameraDeviceParser(objectMapper));
-      }
-      if (this.enablePortableMediaPlayers) {
-        deviceParsers.add(new PortableMediaPlayerDeviceParser(objectMapper));
       }
       if (this.enableMobiles) {
         deviceParsers.add(new MobileDeviceParser(objectMapper));

@@ -44,7 +44,6 @@ public class OtherTest extends AbstractTest {
             "fixtures/mobile_apps.yml",
             "fixtures/peripheral.yml",
             "fixtures/phablet.yml",
-            "fixtures/portable_media_player.yml",
             "fixtures/smart_display.yml",
             "fixtures/smart_speaker.yml",
             "fixtures/tv.yml",

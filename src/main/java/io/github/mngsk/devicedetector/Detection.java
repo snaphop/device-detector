@@ -316,11 +316,6 @@ public class Detection {
   }
 
   @JsonIgnore
-  public boolean isPortableMediaPlayer() {
-    return this.device != null ? this.device.getType().equals("portable media player") : false;
-  }
-
-  @JsonIgnore
   public boolean isCamera() {
     return this.device != null ? this.device.getType().equals("camera") : false;
   }
