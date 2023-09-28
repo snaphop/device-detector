@@ -36,16 +36,13 @@ public class OtherTest extends AbstractTest {
     List<String> fixtureFiles =
         Arrays.asList(
             "fixtures/camera.yml",
-            "fixtures/console.yml",
             "fixtures/desktop.yml",
             "fixtures/feature_phone.yml",
             "fixtures/feed_reader.yml",
-            "fixtures/mediaplayer.yml",
             "fixtures/mobile_apps.yml",
             "fixtures/peripheral.yml",
             "fixtures/phablet.yml",
             "fixtures/smart_display.yml",
-            "fixtures/smart_speaker.yml",
             "fixtures/tv.yml",
             "fixtures/tv-1.yml",
             "fixtures/wearable.yml");

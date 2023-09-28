@@ -52,7 +52,6 @@ public class DetectionTest {
     assertFalse(d.isTablet());
     assertFalse(d.isPhablet());
     assertFalse(d.isSmartDisplay());
-    assertFalse(d.isSmartSpeaker());
     assertFalse(d.isTV());
     assertFalse(d.isCamera());
 

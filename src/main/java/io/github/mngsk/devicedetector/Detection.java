@@ -331,11 +331,6 @@ public class Detection {
   }
 
   @JsonIgnore
-  public boolean isSmartSpeaker() {
-    return this.device != null ? this.device.getType().equals("smart speaker") : false;
-  }
-
-  @JsonIgnore
   public boolean usesMobileBrowser() {
     return this.client != null
         && this.client.getType().equals("browser")
