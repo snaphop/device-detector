@@ -19,7 +19,6 @@ import io.github.mngsk.devicedetector.client.bot.BotParser;
 import io.github.mngsk.devicedetector.client.browser.BrowserParser;
 import io.github.mngsk.devicedetector.device.AbstractDeviceParser;
 import io.github.mngsk.devicedetector.device.CameraDeviceParser;
-import io.github.mngsk.devicedetector.device.ConsoleDeviceParser;
 import io.github.mngsk.devicedetector.device.Device;
 import io.github.mngsk.devicedetector.device.HbbTvDeviceParser;
 import io.github.mngsk.devicedetector.device.MobileDeviceParser;
@@ -79,7 +78,6 @@ public class DeviceDetector {
 
     // Devices
     private boolean enableCameras = true;
-    private boolean enableConsoles = true;
     private boolean enableMobiles = true;
     private boolean enableTelevisions = true;
     private boolean enableNotebooks = true;
@@ -104,7 +102,6 @@ public class DeviceDetector {
 
     public DeviceDetectorBuilder enableAllDevices() {
       this.enableCameras = true;
-      this.enableConsoles = true;
       this.enableMobiles = true;
       this.enableTelevisions = true;
       this.enableNotebooks = true;
@@ -113,11 +110,6 @@ public class DeviceDetector {
 
     public DeviceDetectorBuilder enableCameras() {
       this.enableCameras = true;
-      return this;
-    }
-
-    public DeviceDetectorBuilder enableConsoles() {
-      this.enableConsoles = true;
       return this;
     }
 
@@ -196,7 +188,6 @@ public class DeviceDetector {
 
     public DeviceDetectorBuilder disableAllDevices() {
       this.enableCameras = false;
-      this.enableConsoles = false;
       this.enableMobiles = false;
       this.enableTelevisions = false;
       this.enableNotebooks = false;
@@ -205,11 +196,6 @@ public class DeviceDetector {
 
     public DeviceDetectorBuilder disableCameras() {
       this.enableCameras = false;
-      return this;
-    }
-
-    public DeviceDetectorBuilder disableConsoles() {
-      this.enableConsoles = false;
       return this;
     }
 
@@ -291,9 +277,6 @@ public class DeviceDetector {
       }
       if (this.enableNotebooks) {
         deviceParsers.add(new NotebookDeviceParser(objectMapper));
-      }
-      if (this.enableConsoles) {
-        deviceParsers.add(new ConsoleDeviceParser(objectMapper));
       }
       if (this.enableCameras) {
         deviceParsers.add(new CameraDeviceParser(objectMapper));
