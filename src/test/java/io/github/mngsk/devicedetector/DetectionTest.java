@@ -54,12 +54,10 @@ public class DetectionTest {
     assertFalse(d.isSmartDisplay());
     assertFalse(d.isSmartSpeaker());
     assertFalse(d.isTV());
-    assertFalse(d.isConsole());
     assertFalse(d.isCamera());
 
     assertTrue(d.isBrowser());
     assertFalse(d.isLibrary());
-    assertFalse(d.isMediaPlayer());
     assertFalse(d.isMobileApp());
     assertFalse(d.isPIM());
     assertFalse(d.isFeedReader());

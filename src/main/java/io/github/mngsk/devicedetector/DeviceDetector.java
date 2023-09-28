@@ -12,7 +12,6 @@ import io.github.mngsk.devicedetector.client.AbstractClientParser;
 import io.github.mngsk.devicedetector.client.Client;
 import io.github.mngsk.devicedetector.client.FeedReaderClientParser;
 import io.github.mngsk.devicedetector.client.LibraryClientParser;
-import io.github.mngsk.devicedetector.client.MediaPlayerClientParser;
 import io.github.mngsk.devicedetector.client.MobileAppClientParser;
 import io.github.mngsk.devicedetector.client.PersonalInformationManagerClientParser;
 import io.github.mngsk.devicedetector.client.bot.BotParser;
@@ -89,7 +88,6 @@ public class DeviceDetector {
     private boolean enableBrowsers = true;
     private boolean enableFeedReaders = true;
     private boolean enableLibraries = true;
-    private boolean enableMediaPlayers = true;
     private boolean enableMobileApps = true;
     private boolean enablePersonalInformationManagers = true;
 
@@ -138,7 +136,6 @@ public class DeviceDetector {
       this.enableBrowsers = true;
       this.enableFeedReaders = true;
       this.enableLibraries = true;
-      this.enableMediaPlayers = true;
       this.enableMobileApps = true;
       this.enablePersonalInformationManagers = true;
       return this;
@@ -161,11 +158,6 @@ public class DeviceDetector {
 
     public DeviceDetectorBuilder enableLibraries() {
       this.enableLibraries = true;
-      return this;
-    }
-
-    public DeviceDetectorBuilder enableMediaPlayers() {
-      this.enableMediaPlayers = true;
       return this;
     }
 
@@ -224,7 +216,6 @@ public class DeviceDetector {
       this.enableBrowsers = false;
       this.enableFeedReaders = false;
       this.enableLibraries = false;
-      this.enableMediaPlayers = false;
       this.enableMobileApps = false;
       this.enablePersonalInformationManagers = false;
       return this;
@@ -247,11 +238,6 @@ public class DeviceDetector {
 
     public DeviceDetectorBuilder disableLibraries() {
       this.enableLibraries = false;
-      return this;
-    }
-
-    public DeviceDetectorBuilder disableMediaPlayers() {
-      this.enableMediaPlayers = false;
       return this;
     }
 
@@ -296,9 +282,6 @@ public class DeviceDetector {
       }
       if (this.enableMobileApps) {
         clientParsers.add(new MobileAppClientParser(objectMapper));
-      }
-      if (this.enableMediaPlayers) {
-        clientParsers.add(new MediaPlayerClientParser(objectMapper));
       }
       if (this.enablePersonalInformationManagers) {
         clientParsers.add(new PersonalInformationManagerClientParser(objectMapper));

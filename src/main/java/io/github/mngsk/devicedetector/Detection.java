@@ -35,7 +35,7 @@ public class Detection {
       Pattern.compile("(?:^|[^A-Z_-])(?:Opera TV Store)", Pattern.CASE_INSENSITIVE);
   private static List<String> mobileDeviceTypes =
       Arrays.asList(
-          "feature phone", "smartphone", "tablet", "phablet", "camera", "portable media player");
+          "feature phone", "smartphone", "tablet", "phablet", "camera");
   private static List<String> nonMobileDeviceTypes =
       Arrays.asList("tv", "smart display", "console");
   private static List<String> mobileOnlyBrowsers =
@@ -311,11 +311,6 @@ public class Detection {
   }
 
   @JsonIgnore
-  public boolean isConsole() {
-    return this.device != null ? this.device.getType().equals("console") : false;
-  }
-
-  @JsonIgnore
   public boolean isCamera() {
     return this.device != null ? this.device.getType().equals("camera") : false;
   }
@@ -409,11 +404,6 @@ public class Detection {
   @JsonIgnore
   public boolean isLibrary() {
     return this.client != null ? this.client.getType().equals("library") : false;
-  }
-
-  @JsonIgnore
-  public boolean isMediaPlayer() {
-    return this.client != null ? this.client.getType().equals("mediaplayer") : false;
   }
 
   @Override
